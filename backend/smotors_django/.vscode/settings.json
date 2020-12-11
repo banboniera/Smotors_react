@@ -1,0 +1,12 @@
+{
+    "python.pythonPath": "C:\Users\march\AppData\Roaming\Python\Python38\Scripts",
+    "team.showWelcomeMessage": false,
+    "editor.formatOnSave": true,
+    "python.linting.pep8Enabled": true,
+    "python.linting.pylintPath": "C:\Users\march\AppData\Roaming\Python\Python38\site-packages\pylint",
+    "python.linting.pylintArgs": [
+        "--load-plugins",
+        "pylint_django"
+    ],
+    "python.linting.pylintEnabled": true
+}
