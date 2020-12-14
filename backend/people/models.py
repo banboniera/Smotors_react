@@ -9,7 +9,7 @@ class Client(models.Model):
     surname = models.CharField(max_length=50, blank=True, null=True)
     phone = models.DecimalField(max_digits=15, decimal_places=0, validators=[MinValueValidator(Decimal('0.0'))],
                                 blank=False, null=False)
-    NIP = models.DecimalField(max_digits=17, decimal_places=0, validators=[MinValueValidator(Decimal('0.0'))],
+    nip = models.DecimalField(max_digits=17, decimal_places=0, validators=[MinValueValidator(Decimal('0.0'))],
                               blank=True, null=True)
     email = models.EmailField(max_length=320, blank=True, null=True)
     comment = models.CharField(max_length=500, blank=True, null=True)
