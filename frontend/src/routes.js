@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import ClientList from './containers/ClientList';
+import ClientDetail from './containers/ClientDetailView';
+import ClientList from './containers/ClientListView';
 
 const BaseRouter = () => (
     <div>
         <Route exact path='/api/people/' component={ClientList} />
-        <Route exact path='/api/people//detail/<int:id>/' component={ClientList} />
+        <Route exact path='/api/people/detail/:clientID' component={ClientDetail} />
     </div>
 );
 

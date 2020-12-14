@@ -1,5 +1,4 @@
 import 'antd/dist/antd.css';
-import ClientList from './containers/ClientList';
 import CustomLayout from './containers/Layout';
 import BaseRouter from './routes';
 import {BrowserRouter as Router} from 'react-router-dom';

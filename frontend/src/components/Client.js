@@ -1,5 +1,5 @@
 import { LikeOutlined, MessageOutlined, StarOutlined } from '@ant-design/icons';
-import { Avatar, List, Space } from 'antd';
+import { List, Space } from 'antd';
 import React from 'react';
 
 const IconText = ({ icon, text }) => (
@@ -21,11 +21,6 @@ function Clients(props) {
                 pageSize: 3,
             }}
             dataSource={props.data}
-            footer={
-                <div>
-                    <b>ant design</b> footer part
-      </div>
-            }
             renderItem={item => (
                 <List.Item
                     key={item.title}
@@ -43,7 +38,7 @@ function Clients(props) {
                     }
                 >
                     <List.Item.Meta
-                        title={<a href=''>{item.name} {item.surname}</a>}
+                        title={<a href={`${item.id}/detail/`}>{item.name} {item.surname}</a>}
                         description={item.phone}
                     />
                     {item.content}
