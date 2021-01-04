@@ -1,9 +1,8 @@
 import { Button, Card } from 'antd';
 import axios from 'axios';
 import React from 'react';
-import { connect } from "react-redux";
-
 import ClientForm from '../components/ClientForm';
+
 
 class ClientDetail extends React.Component {
     state = {
