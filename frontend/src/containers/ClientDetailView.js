@@ -1,4 +1,4 @@
-import { Card } from 'antd';
+import { Button, Card } from 'antd';
 import axios from 'axios';
 import React from 'react';
 import { connect } from "react-redux";
@@ -12,12 +12,18 @@ class ClientDetail extends React.Component {
 
     componentDidMount() {
         const clientID = this.props.match.params.clientID;
-        axios.get(`http://127.0.0.1:8000/api/people/${clientID}/detail/`)
+        axios.get(`http://127.0.0.1:8000/api/people/${clientID}/`)
             .then(res => {
                 this.setState({
                     client: res.data
                 });
             })
+    }
+
+    handleDelete = (event) => {
+        const clientID = this.props.match.params.clientID;
+        axios.delete(`http://127.0.0.1:8000/api/people/${clientID}/delete/`);
+        this.props.history.push('/api/people/');
     }
 
     render() {
@@ -26,11 +32,14 @@ class ClientDetail extends React.Component {
                 <Card title={this.state.client.name}>
                     <p>{this.state.client.surname}</p>
                 </Card>
-                <ClientForm 
-                requestType="post" 
-                clientID={this.props.match.params.clientID}
-                btnText = "Update"
+                <ClientForm
+                    requestType="put"
+                    clientID={this.props.match.params.clientID}
+                    btnText="Update"
                 />
+                <form onSubmit={this.handleDelete}>
+                    <Button type="danger" htmlType="submit">Delete</Button>
+                </form>
             </div>
         )
     }
@@ -38,8 +47,8 @@ class ClientDetail extends React.Component {
 
 const mapStateToProps = state => {
     return {
-      token: state.token
+        token: state.token
     };
-  };
+};
 
-export default connect(mapStateToProps)(ClientDetail);
+export default ClientDetail;

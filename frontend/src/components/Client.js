@@ -38,7 +38,7 @@ function Clients(props) {
                     }
                 >
                     <List.Item.Meta
-                        title={<a href={`${item.id}/detail/`}>{item.name} {item.surname}</a>}
+                        title={<a href={`${item.id}/`}>{item.name} {item.surname}</a>}
                         description={item.phone}
                     />
                     {item.content}

@@ -6,7 +6,7 @@ import ClientList from './containers/ClientListView';
 const BaseRouter = () => (
     <div>
         <Route exact path='/api/people/' component={ClientList} />
-        <Route exact path='/api/people/detail/:clientID' component={ClientDetail} />
+        <Route exact path='/api/people/:clientID' component={ClientDetail} />
     </div>
 );
 
